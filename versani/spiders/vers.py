@@ -4,7 +4,7 @@ from ..items import VersaniItem
 class VersSpider(scrapy.Spider):
     name = "vers"
     allowed_domains = ["versani.com"]
-    start_urls = ["https://versani.com/?page=search&subcat=&coll=&size=&brand=&stonetype=&stonecolor=&metl=&clsp=&plat=&colr=&avail=&prange=&sort=&display=&gender=ladies&cat=&m=108"]
+    start_urls = ["https://versani.com/?page=search&subcat=&coll=&size=&brand=&stonetype=&stonecolor=&metl=&clsp=&plat=&colr=&avail=&prange=&sort=&display=&gender=ladies&cat=&m=108&pagenum=1"]
     base_url = 'https://versani.com/'
 
     def parse(self, response):
