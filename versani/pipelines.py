@@ -20,4 +20,14 @@ class VersaniPipeline:
         value = adapter.get('style')
         adapter['style'] = value.replace('Style # ', '')
 
+        # finish cleanup
+        value = adapter.get('finish')
+        if len(value) == 0:
+            adapter['finish'] = 'None'
+
+        # size cleanup
+        value = adapter.get('size')
+        if len(value) == 0:
+            adapter['size'] = 'None'
+
         return item

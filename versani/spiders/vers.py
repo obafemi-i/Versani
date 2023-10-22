@@ -53,4 +53,6 @@ class VersSpider(scrapy.Spider):
         yield versanis
 
 
-        
+        for x in range(1, 3):
+            url = f"https://versani.com/?page=search&subcat=&coll=&size=&brand=&stonetype=&stonecolor=&metl=&clsp=&plat=&colr=&avail=&prange=&sort=&display=&gender=ladies&cat=&m=108&pagenum={x}"
+            yield scrapy.Request(url, callback=self.parse)
