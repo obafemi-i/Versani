@@ -17,7 +17,7 @@ class VersSpider(scrapy.Spider):
         
         product_links = [self.base_url+prod for prod in filter]
 
-        for product_link in product_links[:7]:
+        for product_link in product_links:
             yield scrapy.Request(product_link, callback=self.get_info)
 
     def get_info(self, response):
@@ -53,6 +53,6 @@ class VersSpider(scrapy.Spider):
         yield versanis
 
 
-        for x in range(1, 3):
+        for x in range(2, 7):
             url = f"https://versani.com/?page=search&subcat=&coll=&size=&brand=&stonetype=&stonecolor=&metl=&clsp=&plat=&colr=&avail=&prange=&sort=&display=&gender=ladies&cat=&m=108&pagenum={x}"
             yield scrapy.Request(url, callback=self.parse)
